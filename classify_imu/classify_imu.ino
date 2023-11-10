@@ -121,7 +121,7 @@ void loop() {
 }
   
 void askQuestion(const char* ques) { 
-  /*fdfsdf*/
+  /*fonction qui affiche des question et après chaque geste effectué, print la question suivante*/
 
   float aX, aY, aZ, gX, gY, gZ;
 
