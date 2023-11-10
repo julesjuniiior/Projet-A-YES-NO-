@@ -99,7 +99,7 @@ void setup() {
 void loop() {
   float aX, aY, aZ, gX, gY, gZ;
 
-// Ask the first question
+// Ask the first question; condition pour pouvoir débuter le quizz
   askQuestion("Are you ready? (veuillez répondre YES pour pouvoir débuter)");
 
 // Check the response
@@ -121,14 +121,14 @@ void loop() {
 }
   
 void askQuestion(const char* ques) { 
-  /*fonction qui affiche des question et après chaque geste effectué, print la question suivante*/
+  /*fonction conçue pour poser une question à l'utilisateur, collecter des données d'accéléromètre en réponse à un geste de la main, et utiliser un modèle TensorFlow Lite pour prédire la réponse à la question posée;et  print la question suivante*/
 
   float aX, aY, aZ, gX, gY, gZ;
 
-   Serial.println(ques);
+   Serial.println(ques); // La fonction commence par afficher la question à l'utilisateur via la sortie série
 
   // wait for significant motion
-  while (samplesRead == numSamples) {
+  while (samplesRead == numSamples) { //la boucle se poursuit jusqu'à ce qu'un geste significatif soit détecté (dépassement du seuil d'accélération)
     if (IMU.accelerationAvailable()) {
       // read the acceleration data
       IMU.readAcceleration(aX, aY, aZ);
@@ -176,6 +176,7 @@ void askQuestion(const char* ques) {
 
         int predictedGesture = -1;
         float maxConfidence = 0.0;
+        
         // Loop through the output tensor values from the model
         for (int i = 0; i < NUM_GESTURES; i++) {
           Serial.print(GESTURES[i]);
