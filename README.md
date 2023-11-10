@@ -24,10 +24,11 @@ Search for and install:
         * Pour pouvoir collecter les données et le mettre dans un fichier csv Executer fichier [collect_serial_data_to_csv](https://github.com/julesjuniiior/Projet-A-YES-NO-/blob/main/collect_serial_data_to_csv.py) à partir du logiel visual studio ou en tapant la commande _**pycollect_serial_data_to_csv.py**_ sur votre terminal. effectuer les gestes pour "yes" dans un premier temps et puis pour "no"; assurez vous d'avoir suffisament de données pour chaque geste. Et n'oubliez par de renomer chaque fichier.csv générer
     
    * Entrainement & conversion du modèle:
-        * ouvrir le fichier [arduino_tiny_ml]() et lancer sur google colab ou jupiter notbook.
+        * ouvrir le fichier [arduino_tiny_ml](https://github.com/julesjuniiior/Projet-A-YES-NO-/blob/main/collect_serial_data_to_csv.py) et lancer sur google colab ou jupiter notbook.
         * importer les fichiers csv (YES et NO) dans "content"
         * ![image]()
         * Entrainer le modèle en exécutant chaque ligne de code
+
 ### Step 2 ** Intégration du modèle avec Arduino**
      
    
