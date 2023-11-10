@@ -9,7 +9,8 @@
 2. configuration de la carte Arduino
      -branchez la carte
      -installez en accédant à Tools>Board>Board Manager et chercher **Arduino Mbed OS Nano Boards.
-     ![image](
+     ![image](https://github.com/julesjuniiior/Projet-A-YES-NO-/blob/main/images_Readme/config-carte.png)
+   
 
 
 
