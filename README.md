@@ -15,6 +15,10 @@
 Navigate to Tools > Manage Libraries
 Search for and install:
      -[Arduino_LSM9DS1](https://www.arduino.cc/reference/en/libraries/arduino_lsm9ds1/?_gl=1*aep7sb*_ga*MTQ4Nzc5Nzg0My4xNjkzOTE0NjA3*_ga_NEXN8H46L5*MTY5NzcxODM1Ny45LjEuMTY5NzcyMDA0MS4wLjAuMA)
-     -Harvard_Tinymlx
-
+     -Harvard_Tinymlx (Tensorflow)
+##Etapes de réalisation de tout le projet
+     Après avoir installer le logiciel et toutes les librairies nécessaires; nous allons pouvoir dans un premier temps récolter les données de l'accéloromètre et Entrainer notre modèle avec Tensorflow.
+   ###Step 1 **Entrainement du modèle**
+        #### collecter les données  
+   
 
