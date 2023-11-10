@@ -26,10 +26,11 @@ Search for and install:
    * Entrainement & conversion du modèle:
         * ouvrir le fichier [arduino_tiny_ml](https://github.com/julesjuniiior/Projet-A-YES-NO-/blob/main/collect_serial_data_to_csv.py) et lancer sur google colab ou jupiter notbook.
         * importer les fichiers csv (YES et NO) dans "content"
-        * ![image]()
+        * ![image](https://github.com/julesjuniiior/Projet-A-YES-NO-/blob/main/images_Readme/import%20fichier.csv.png)
         * Entrainer le modèle en exécutant chaque ligne de code
 
 ### Step 2 ** Intégration du modèle avec Arduino**
+
      
    
    
