@@ -33,7 +33,7 @@ Search for and install:
 ### Step 2 **Intégration du modèle avec Arduino**
   * Utilisez le convertisseur xxd pour générer un fichier C à partir de votre modèle TensorFlow Lite converti. Incluez ce fichier dans votre projet Arduino.
 ### Step 3 **Code Arduino & implemantation du Quizz**
-
+![img]()
      
    
    
