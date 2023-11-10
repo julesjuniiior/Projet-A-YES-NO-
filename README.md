@@ -18,7 +18,7 @@ Search for and install:
      -Harvard_Tinymlx (Tensorflow)
 ##Etapes de réalisation de tout le projet
      Après avoir installer le logiciel et toutes les librairies nécessaires; nous allons pouvoir dans un premier temps récolter les données de l'accéloromètre et Entrainer notre modèle avec Tensorflow.
-   ###Step 1 **Entrainement du modèle**
+   ### Step 1 **Entrainement du modèle**
         #### collecter les données  
    
 
