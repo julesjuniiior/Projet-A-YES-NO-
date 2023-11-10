@@ -20,7 +20,7 @@ Search for and install:
  Après avoir installer le logiciel et toutes les librairies nécessaires; nous allons pouvoir dans un premier temps récolter les données de l'accéloromètre et Entrainer notre modèle avec Tensorflow.
 ### Step 1 **Entrainement du modèle**
   - collecter les données :
-           - ° Télécharger tout d'abord le code [arduino](https://github.com/julesjuniiior/Projet-A-YES-NO-/blob/main/generate_data_to_train/generate_data_to_train.ino) dans votre carte (cela permet de générer les données de l'accélormètre que nous allons par la suite entrainer pour le modèle).
+     ° Télécharger tout d'abord le code [arduino](https://github.com/julesjuniiior/Projet-A-YES-NO-/blob/main/generate_data_to_train/generate_data_to_train.ino) dans votre carte (cela permet de générer les données de l'accélormètre que nous allons par la suite entrainer pour le modèle).
     ° Pour pouvoir collecter les données et le mettre dans un fichier csv Executer fichier [collect_serial_data_to_csv](https://github.com/julesjuniiior/Projet-A-YES-NO-/blob/main/collect_serial_data_to_csv.py) à partir du logiel visual studio ou en tapant la commande _**pycollect_serial_data_to_csv.py**_ sur votre terminal. effectuer les gestes pour "yes" dans un premier temps et puis pour "no"; assurez vous d'avoir suffisament de données pour chaque geste. Et n'oubliez par de renomer chaque fichier.csv générer
      
    
