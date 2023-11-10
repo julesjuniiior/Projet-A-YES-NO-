@@ -73,8 +73,8 @@ void setup() {
   Serial.print(IMU.gyroscopeSampleRate());
   Serial.println(" Hz");
   Serial.println();
-// Message de bienvenue
-  Serial.println("BIENVENUE à ce Quiz, vous repondrez aux différentes questions en faisant des gestes correspondants YES✓ NO X"); 
+
+  Serial.println("BIENVENUE à ce Quiz, vous repondrez aux différentes questions en faisant des gestes correspondants YES✓ NO X"); // Message de bienvenue
 
   Serial.println();
 
@@ -99,35 +99,28 @@ void setup() {
 void loop() {
   float aX, aY, aZ, gX, gY, gZ;
 
-// Ask the first question
+   // Ask the first question
   askQuestion("Are you ready? (veuillez répondre YES pour pouvoir débuter)");
 
-// Check the response
-  if (!waitForUserResponse()) // on vérifie si la fonction retourne un false (dans ce cas l'user a répondu "no")
-   {
+  // Check the response
+  if (!waitForUserResponse()) {
     Serial.println("You are not ready. vous avez choisi no.");
     askQuestion("Are you ready? (veuillez répondre YES pour pouvoir débuter)");
 
     return;
   }
-  // ask a serie of questions
-  askQuestion("Est-ce que le ciel est bleu? (YES/NO)");
-  askQuestion("a t-il fait chaud aujourd'hui? (YES/NO)");
-  askQuestion("aimez-vous le football? (YES/NO)");
-  askQuestion("êtes vous passioné par IOT? (YES/NO)");
 
-  // Reset samplesRead for the next set of questions
-  samplesRead = numSamples;
+  askQuestion("Do you agree? (YES/NO)");
+  askQuestion("Is it sunny today? (YES/NO)");
+  askQuestion("Have you had lunch? (YES/NO)");
+  // wait for significant motion
 }
-  
-void askQuestion(const char* ques) { 
-  /*fdfsdf*/
 
+void askQuestion(const char* ques) {  
   float aX, aY, aZ, gX, gY, gZ;
 
    Serial.println(ques);
 
-  // wait for significant motion
   while (samplesRead == numSamples) {
     if (IMU.accelerationAvailable()) {
       // read the acceleration data
@@ -173,28 +166,40 @@ void askQuestion(const char* ques) {
           while (1);
           return;
         }
-
-        int predictedGesture = -1;
+         
+         int predictedGesture = -1;
         float maxConfidence = 0.0;
         // Loop through the output tensor values from the model
-        for (int i = 0; i < NUM_GESTURES; i++) {
-          Serial.print(GESTURES[i]);
-          Serial.print(": ");
-          Serial.println(tflOutputTensor->data.f[i], 6);
+        
 
+        for (int i = 0; i < NUM_GESTURES; i++) {
+          /*Serial.print(GESTURES[i]);
+          Serial.print(": ");
+          Serial.println(tflOutputTensor->data.f[i], 6);*/
+       
           if (tflOutputTensor->data.f[i] > maxConfidence) {
             maxConfidence = tflOutputTensor->data.f[i];
             predictedGesture = i;
           }
+        
         }
         Serial.print("vous avez répondu: ");
         Serial.println(GESTURES[predictedGesture]);
+        Serial.println();
+
+      /*for (int i = 0; i < NUM_GESTURES; i++) {
+      
+        Serial.println("Vérification: ");
+        Serial.print(GESTURES[i]);
+        Serial.print(": ");
+        Serial.println(tflOutputTensor->data.f[i], 6);
+      }*/
+
         Serial.println();
       }
     }
   }
 }
-
 
 
 bool waitForUserResponse() {
@@ -243,8 +248,8 @@ bool waitForUserResponse() {
           Serial.println(tflOutputTensor->data.f[i], 6);
 
           if (tflOutputTensor->data.f[i] > maxConfidence) {
-           // maxConfidence = tflOutputTensor->data.f[i];
-            //predictedGesture = i;
+            maxConfidence = tflOutputTensor->data.f[i];
+            predictedGesture = i;
           }
         }
 
@@ -257,3 +262,48 @@ bool waitForUserResponse() {
   // Default to false if something goes wrong
   return false;
 }
+
+
+
+
+/*void askQuestion(int gestureIndex) {
+ // Serial.print("Question based on gesture '");
+  
+ // Serial.print(GESTURES[gestureIndex]);
+ // Serial.println("':");
+  //Serial.println(gestureIndex);
+
+  switch (gestureIndex) {
+    case 0:  // Gesture: YES
+      //Serial.println("Do you agree? (YES/NO)");
+      Serial.println("vous avez choisi yes");
+      break;
+
+    case 1:  // Gesture: NO
+      //Serial.println("Do you disagree? (YES/NO)");
+      Serial.println("vous avez choisi no");
+      break;
+
+    default:
+      Serial.println("Unknown gesture, ask a general question.");
+      Serial.println("Do you have any comments? (YES/NO)");
+      break;
+  }}
+
+
+  void Question(askQuestion) {
+
+    Serial.println("tu es beau?");
+
+    switch (askQuestion) {
+    case 0:  // Gesture: YES
+      //Serial.println("Do you agree? (YES/NO)");
+      Serial.println("le ciel est bleu?");
+      break;
+
+    case 1:  // Gesture: NO
+      //Serial.println("Do you disagree? (YES/NO)");
+      Serial.println("ru  es blanc?");
+      break;}
+      }
+  // Wait for the user's response*/
