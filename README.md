@@ -10,7 +10,11 @@
      -branchez la carte
      -installez en accédant à Tools>Board>Board Manager et chercher **Arduino Mbed OS Nano Boards.
      ![image](https://github.com/julesjuniiior/Projet-A-YES-NO-/blob/main/images_Readme/config-carte.png)
-   
-
+     - sélectionner le port en accédant à Tools -> Port -> dev/cu... (Arduino Nano 33 BLE)
+3. Install Arduino libraries
+Navigate to Tools > Manage Libraries
+Search for and install:
+-[Arduino_LSM9DS1](https://www.arduino.cc/reference/en/libraries/arduino_lsm9ds1/?_gl=1*aep7sb*_ga*MTQ4Nzc5Nzg0My4xNjkzOTE0NjA3*_ga_NEXN8H46L5*MTY5NzcxODM1Ny45LjEuMTY5NzcyMDA0MS4wLjAuMA)
+-Harvard_Tinymlx
 
 
